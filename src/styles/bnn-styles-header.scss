@@ -1,0 +1,143 @@
+.bnn-header {
+    
+}
+.bnn-header-nav {
+    display: table;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 18px;
+    padding-top: 21px;
+    min-height: 80px;
+    border-bottom: 1px solid #c4c4c4;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    //Mobile Menu Toggle
+    @media (max-width: 767px) {
+        &.visible {
+            position: absolute;
+            display: block;
+        }
+        &.hidden {
+            .bnn-main-menu {
+                display: none;
+            }
+        }
+    }
+}
+.bnn-header-nav-toggler {
+    display: none;
+    float: right;
+    width: 50px;
+    height: 40px;
+    background-color: #a0bf38;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    @media (max-width: 767px) {
+        display: block;
+    }
+}
+.bnn-header-nav-toggler-slice {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    &--1 {
+        margin-top: 3px;
+    }
+    &--2 {
+        margin-top: 4px;
+    }
+    &--3 {
+        margin-top: 4px;
+    }
+}
+.bnn-logo {
+    display: table;
+    float: left;
+}
+.bnn-logo-img {
+    float: left;
+    width: 162px;
+}
+.fsim-main-menu {
+    
+    //Mobile Menu
+    @media (max-width: 767px) {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+}
+.bnn-main-menu {
+    @include resetList();
+    display: table;
+    float: right;
+    margin-top: 5px;
+    > li {
+        float: left;
+        a,
+        .fsim-link {
+            padding: .5rem .5rem;
+            &.active {
+                color: #000;
+            }
+        }
+    }
+    //Mobile Menu
+    @media (max-width: 767px) {
+        width: 100%;
+        margin-top: 10px;
+        .fsim-drop-menu-trigger {
+            display: none !important;
+        }
+        li {
+            width: 100%;
+            a,
+            .fsim-link {
+                display: block;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+.bnn-drop-menu {
+    ul {
+        @include resetList();
+        li {
+            &.mat-menu-item {
+                &.active {
+                    background-color: $themeColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.bnn-drop-menu-mobile {
+    display: none;
+    @include resetList();
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    li {
+        width: 100%;
+        a {
+            display: block;
+            width: 100%;
+            padding: .5rem 0;
+        }
+    }
+    @media (max-width: 767px) {
+        display: table;
+    }
+}

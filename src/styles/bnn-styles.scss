@@ -1,0 +1,60 @@
+// Bootstrap css
+@import '~bootstrap/scss/bootstrap';
+
+// Configs
+@import "bnn-styles-conf-vars.scss";
+@import "bnn-styles-conf-functions.scss";
+
+// Sections
+@import "bnn-styles-header.scss";
+@import "bnn-styles-main-content.scss";
+@import "bnn-styles-footer.scss";
+@import "bnn-styles-loader.scss";
+
+// Buttons
+@import "bnn-styles-buttons.scss";
+
+// Icons
+@import "bnn-styles-icons.scss";
+
+
+
+// General custom elements
+// --------------------------
+html {
+    height: 100%;
+    position: relative;
+}
+body {
+    font-size: $fontSizeBase;//16px
+    //font-size: 1rem;
+}
+a,
+.bnn-link {
+    color: $linksColor;
+    &:hover {
+        color: $linksOverColor;
+        cursor: pointer;
+    }
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+textarea:focus,
+input:focus,
+button:focus {
+    outline: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1144px;
+    }
+}

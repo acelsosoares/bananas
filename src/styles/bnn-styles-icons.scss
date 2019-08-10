@@ -1,0 +1,8 @@
+.bnn-icon {
+    display: inline-block;
+    &--check {
+        width: 20px;
+        height: 15px;
+        @include sprite(-4px, -34px);
+    }
+}

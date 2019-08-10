@@ -1,0 +1,40 @@
+<!-- Main Header -->
+<header class="bnn-header">
+  <div class="container">
+    <nav class="bnn-header-nav" [ngClass]="menuStatusClass">
+
+      <!-- ForestSIM Logo -->
+      <a class="bnn-logo" routerLink="/" title="Go to home">
+        <img class="bnn-logo-img" src="assets/imgs/bnn-logo.jpg" alt="Crazy Bananas">
+      </a>
+
+      <!-- Main Menu - Mobile Toggle -->
+      <button (click)="toggleMobileMainMenu()" class="bnn-header-nav-toggler" type="button" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Open/Close menu">
+        <span class="bnn-header-nav-toggler-slice bnn-header-nav-toggler-slice--1"></span>
+        <span class="bnn-header-nav-toggler-slice bnn-header-nav-toggler-slice--2"></span>
+        <span class="bnn-header-nav-toggler-slice bnn-header-nav-toggler-slice--3"></span>
+      </button>
+      
+      <!-- Main Menu - Links -->
+      <app-menu-main></app-menu-main>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="bnn-main" role="main">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Main Footer -->
+<footer class="bnn-footer">
+  <div class="container">
+    © 2019 Crazy Bananas Casino · 
+    <nav class="bnn-footer-nav">
+      <ul class="bnn-footer-menu">
+        <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Privacy</a></li>
+        <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

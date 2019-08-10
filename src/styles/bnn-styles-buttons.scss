@@ -1,0 +1,355 @@
+$btnHeight: 26px;
+
+.fsim-btn,
+.mat-button.fsim-btn {
+    border-radius: 5px;
+    font-weight: normal;
+    min-height: $btnHeight;
+    line-height: 40px;
+    font-size: 16px;
+    text-decoration: none;
+    // Big buttons
+    &--update {
+        position: relative;
+        min-width: 0;
+        padding-right: 34px;
+        background-color: $themeColor;
+        color: #fff;
+        line-height: $btnHeight;
+        &:after {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            font-family: "Material Icons";
+            content: "autorenew";
+            font-size: 20px;
+        }
+    }
+    &--activate {
+        background-color: $themeColor;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        color: #fff;
+    }
+    &--submit {
+        width: 160px;
+        background-color: $themeColor;
+        color: #fff;
+    }
+    &--close {
+        width: 160px;
+        background-color: $themeAltColor;
+        color: #fff;
+    }
+    &--upload {
+        background-color: $themeColor;
+        color: #fff;
+    }
+
+    // Small buttons
+    &--generic {
+        position: relative;
+        background-color: $themeColor;
+        color: #fff;
+        line-height: $btnHeight;
+    }
+    &--add {
+        position: relative;
+        width: $btnHeight;
+        height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        background-color: $themeColor;
+        &:before, &:after {
+            position: absolute;
+            top: 11px;
+            left: 5px;
+            content: "";
+            height: 4px;
+            width: 16px;
+            background-color: #fff;
+        }
+        &:before {
+            transform: rotate(0deg);
+        }
+        &:after {
+            transform: rotate(-90deg);
+        }
+    }
+    &--close-x {
+        position: relative;
+        width: $btnHeight;
+        height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        background-color: $themeColor;
+        &:before, &:after {
+            position: absolute;
+            top: 11px;
+            left: 5px;
+            content: "";
+            height: 4px;
+            width: 16px;
+            background-color: #fff;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    &--see {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "visibility";
+            font-size: 20px;
+        }
+    }
+    &--download {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "get_app";
+            font-size: 20px;
+        }
+    }
+    &--edit {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "edit";
+            font-size: 20px;
+        }
+    }
+    &--history {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "description";
+            font-size: 20px;
+        }
+    }
+    &--clone {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "file_copy";
+            font-size: 20px;
+        }
+    }
+    &--url {
+        background-color: $themeNeutralColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            margin-right: -2px;
+            content: "URL";
+            font-size: 11px;
+        }
+    }
+    &--xls {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            margin-right: -2px;
+            content: "XLS";
+            font-size: 11px;
+        }
+    }
+    &--visibility {
+        background-color: $themeColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "visibility";
+            font-size: 20px;
+        }
+        &--off {
+            &:after {
+                content: "visibility_off";
+            }
+        }
+    }
+    &--delete {
+        background-color: $themeAltColor;
+        color: #fff;
+        height: $btnHeight;
+        width: $btnHeight;
+        line-height: $btnHeight;
+        padding: 0;
+        min-width: 0;
+        &:after {
+            font-family: "Material Icons";
+            content: "delete";
+            font-size: 20px;
+        }
+    }
+}
+.fsim-toggle {
+    border-radius: 5px;
+    .ng-toggle-container {
+        .btn {
+            padding: 0;
+            background: none;
+            border: none;
+            line-height: 16px;
+            text-align: center;
+            justify-content: center;
+            &.ng-toggle-handle {
+                position: relative;
+                margin: 4px 0;
+                width: 30px;
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    content: "";
+                    width: 17px;
+                    height: 17px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                }
+            }
+            &.ng-toggle-on {
+                padding: 0 0 0 10px;
+            }
+            &.ng-toggle-off {
+                padding: 0 10px 0 0;
+            }
+        }
+    }
+    &.ng-toggled-on {
+        background-color: $themeColor;
+        .btn {
+            color: #fff;
+        }
+    }
+    &.ng-toggled-off {
+        background-color: #ccc;
+        .btn {
+            color: #fff;
+        }
+    }
+}
+
+.fsim-toggle {
+    input {
+        display: none;
+        &:checked + label {
+            .fsim-toggle-btn-text-on {
+                display: block;
+            }
+            .fsim-toggle-btn-text-off {
+                display: none;
+            }
+        }
+    }
+    label {
+        margin: 0;
+    }
+    .fsim-toggle-btn-text {
+        position: relative;
+        color: #fff;
+        > * {
+            height: 26px;
+            line-height: 26px;
+            padding: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            @include fontSize(16px);
+            &:after {
+                position: absolute;
+                display: block;
+                width: 17px;
+                height: 17px;
+                content: "";
+                border-radius: 50%;
+                background-color: #fff;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .fsim-toggle-btn-text-on {
+        display: none;
+        background-color: $themeColor;
+        padding-right: 28px;
+        &:after {
+            right: 5px;
+        }
+        &--check {
+            &:before {
+                font-family: "Material Icons";
+                content: "done";
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+    }
+    .fsim-toggle-btn-text-off {
+        display: block;
+        background-color: #ccc;
+        padding-left: 28px;
+        &:after {
+            left: 5px;
+        }
+        &--check {
+            &:before {
+                font-family: "Material Icons";
+                content: "done";
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+    }
+}

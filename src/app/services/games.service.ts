@@ -87,7 +87,8 @@ export class GamesService {
       //Get data from DB
       let apiContent = 'game-categories/popular-games';
       this.http.get<ICategory>(environment.apiUrl+apiContent, {params: this.getParams()}).subscribe(data => {
-        this.dataGamesPopular$.next(data._embedded.games);
+        this.gamesPopular = data._embedded.games;
+        this.dataGamesPopular$.next(this.gamesPopular);
       }, error => {
         //Go to error generic page
       });

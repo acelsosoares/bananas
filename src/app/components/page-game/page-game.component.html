@@ -1,16 +1,20 @@
-<div class="bnn-main-section bnn-main-section--game">
+<!-- Loader -->
+<app-loader [active]="isLoadingData"></app-loader>
+
+<!-- Main Section -->
+<div *ngIf="!isLoadingData" class="bnn-main-section bnn-main-section--game">
 
   <!-- Main Section - Header -->
   <header class="bnn-main-section-header">
     <div class="container">
-      <h1 class="bnn-main-section-header-title">Game</h1>
+      <h1 class="bnn-main-section-header-title">{{gameData.name}}</h1>
     </div>
   </header>
 
   <!-- Main Section - Content -->
-  <div class="bnn-main-section-content">
+  <div #backgroundEl class="bnn-main-section-content">
     <div class="container">
-      Play the GAME
+      <iframe class="bnn-game-iframe" [src]="buildSafeUrl(gameData.url)"></iframe>
     </div>
   </div>
 

@@ -1,0 +1,15 @@
+<!-- Ajax Loader for all -->
+<div *ngIf="!type && active" class="bnn-loader">
+  <span class="bnn-loader-wheel"></span>
+  <span class="bnn-loader-label">A carregar</span>
+</div>
+
+<!-- Ajax Loader for tables -->
+<div *ngIf="type=='line'"  class="bnn-loader-line">
+  <div *ngIf="active" class="bnn-loader-line-wrapper">
+    <span class="bnn-loader-line-phase bnn-loader-line-phase--1"></span>
+    <span class="bnn-loader-line-phase bnn-loader-line-phase--2"></span>
+    <span class="bnn-loader-line-phase bnn-loader-line-phase--3"></span>
+    <span class="bnn-loader-line-phase bnn-loader-line-phase--4"></span>
+  </div>
+</div>

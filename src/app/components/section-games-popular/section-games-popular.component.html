@@ -3,9 +3,21 @@
   <header class="bnn-generic-section-header">
     <h2 class="bnn-generic-section-header-title">Popular games</h2>
   </header>
-  <div class="bnn-generic-section-content bnn-list">
-    <div class="bnn-game bnn-game-popular">
-      1
-    </div>
+  <div class="bnn-generic-section-content">
+
+    <!-- Loader -->
+    <app-loader [active]="isLoadingData"></app-loader>
+
+    <!-- List of Games -->
+    <ul *ngIf="!isLoadingData" class="bnn-popgames-list bnn-list row">
+      <li class="bnn-popgames-list-item col-sm-6 col-md-4 col-lg-3" *ngFor="let game of gamesData; let i=index">
+        <div class="bnn-game bnn-game--square">
+          <img class="bnn-img bnn-img--resp" [src]="game.thumbnail" [alt]="game.name">
+          <div class="bnn-game-info">
+            <a class="bnn-game-info-name" [routerLink]="'/game/'+game.id">{{game.name}}</a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>

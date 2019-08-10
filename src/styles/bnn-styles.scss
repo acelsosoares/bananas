@@ -10,6 +10,7 @@
 @import "bnn-styles-main-content.scss";
 @import "bnn-styles-footer.scss";
 @import "bnn-styles-loader.scss";
+@import "bnn-styles-sections.scss";
 
 // Buttons
 @import "bnn-styles-buttons.scss";
@@ -36,6 +37,56 @@ a,
         color: $linksOverColor;
         cursor: pointer;
     }
+}
+.bnn-img {
+  &--resp {
+    width: 100%;
+    height: auto;
+  }
+  &--fixed-centered {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+  }
+  &--shrink {
+    width: 60%;
+    @media (max-width: 1199px) {
+      width: 70%;
+    }
+    @media (max-width: 767px) {
+      width: 85%;
+    }
+    @media (max-width: 575px) {
+      width: 100%;
+    }
+  }
+  &--shrink-more {
+    width: 40%;
+    @media (max-width: 1199px) {
+      width: 40%;
+    }
+    @media (max-width: 767px) {
+      width: 40%;
+    }
+    @media (max-width: 575px) {
+      width: 40%;
+    }
+  }
+  &--centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.bnn-list {
+    @include resetList();
 }
 .sr-only {
     position: absolute;

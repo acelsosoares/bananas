@@ -1,0 +1,26 @@
+.bnn-popgames-list {
+
+}
+.bnn-popgames-list-item {
+    margin-bottom: 30px;
+}
+.bnn-game-thumbnail {
+
+}
+.bnn-game {
+    position: relative;
+    &--square {
+        min-height: 50px;
+    }
+}
+.bnn-game-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6px 10px;
+    background-color: $themeBlueColor;
+}
+.bnn-game-info-name {
+    color: #fff;
+}

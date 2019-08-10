@@ -12,6 +12,9 @@ import { ParentMainComponent } from './components/parent-main/parent-main.compon
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
 import { SectionGamesPopularComponent } from './components/section-games-popular/section-games-popular.component';
 import { SectionGamesTopComponent } from './components/section-games-top/section-games-top.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { PageGameComponent } from './components/page-game/page-game.component';
+import { PageGamesComponent } from './components/page-games/page-games.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { SectionGamesTopComponent } from './components/section-games-top/section
     ParentMainComponent,
     MenuMainComponent,
     SectionGamesPopularComponent,
-    SectionGamesTopComponent
+    SectionGamesTopComponent,
+    LoaderComponent,
+    PageGameComponent,
+    PageGamesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,23 @@
 .bnn-main {
-    padding-top: 140px;
+    padding-top: 130px;
     padding-bottom: 40px;
 }
 .bnn-main-section {
-
+    &--game {
+        .bnn-main-section-header {
+            background-color: $themeColor;
+        }
+        .bnn-main-section-header-title {
+        }
+    }
 }
 .bnn-main-section-header {
+    padding: 50px 0;
     margin-bottom: 50px;
+    background-color: $themeBlueColor;
 }
 .bnn-main-section-header-title {
-    color: $themeColor;
-    font-size: 2rem;
+    color: #333;
+    font-size: 3rem;
     font-weight: 400;
 }

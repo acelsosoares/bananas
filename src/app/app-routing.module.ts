@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ParentMainComponent } from './components/parent-main/parent-main.component';
 import { PageHomeComponent } from './components/page-home/page-home.component';
+import { PageGameComponent } from './components/page-game/page-game.component';
+import { PageGamesComponent } from './components/page-games/page-games.component';
 
 const routes: Routes = [
   {
@@ -17,14 +19,21 @@ const routes: Routes = [
         path: 'home', component: PageHomeComponent,
         data: {}
       },
-      /*{
-        path: 'membro/:memberId/inicio', component: PageMembersIconsComponent,
+      {
+        path: 'games', component: PageGamesComponent,
         data: {
-          breadcrumb: [
-            { label: '', url: '/membros' },
-            { label: 'Início', url: '' }]
+          breadcrumb: [//TODO
+            { label: 'Games', url: '' }]
         }
-      },*/
+      },
+      {
+        path: 'game/:gameId', component: PageGameComponent,
+        data: {
+          breadcrumb: [//TODO
+            { label: 'Games', url: '/games' },
+            { label: 'Game', url: '' }]
+        }
+      },
     ]
   },
   {

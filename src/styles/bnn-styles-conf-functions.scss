@@ -16,12 +16,8 @@
     list-style: none;
 }
 @mixin sprite($pos1:0, $pos2:0) {
-    background: transparent url(/assets/imgs/fsim-sprite.svg) no-repeat scroll $pos1 $pos2;
+    background: transparent url(/assets/imgs/bnn-sprite.svg) no-repeat scroll $pos1 $pos2;
     background-size: 341px 167px;
-}
-@mixin spriteIcons($pos1:0, $pos2:0) {
-    background: transparent url(/assets/imgs/fsim-sprite-icons.svg) no-repeat scroll $pos1 $pos2;
-    background-size: 404.52px 409.28px;
 }
 @mixin verticalSeparator() {
     display: block;

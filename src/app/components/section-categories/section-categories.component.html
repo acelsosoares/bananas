@@ -1,0 +1,18 @@
+<!-- Categories Section -->
+<section class="bnn-generic-section mt-5">
+  <header class="bnn-generic-section-header">
+    <h2 class="bnn-generic-section-header-title">Categories</h2>
+  </header>
+  <div class="bnn-generic-section-content">
+
+    <!-- Loader -->
+    <app-loader [active]="isLoadingData"></app-loader>
+
+    <!-- List of Categories -->
+    <ul *ngIf="!isLoadingData" class="bnn-categories-list bnn-list">
+      <li class="bnn-categories-list-item" *ngFor="let category of categoriesData; let i=index">
+        <a class="bnn-category-name" [routerLink]="'/games/cat/'+category.slug">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
+</section>

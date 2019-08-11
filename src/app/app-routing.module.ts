@@ -15,25 +15,16 @@ const routes: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
       },
-      {
-        path: 'home', component: PageHomeComponent,
-        data: {}
-      },
-      {
-        path: 'games', component: PageGamesComponent,
-        data: {
-          breadcrumb: [//TODO
-            { label: 'Games', url: '' }]
-        }
-      },
-      {
-        path: 'game/:gameId', component: PageGameComponent,
-        data: {
+      {path: 'home', component: PageHomeComponent, data: {}},
+      {path: 'games', component: PageGamesComponent, data: {}},
+      {path: 'games/search-game/:searchGame', component: PageGamesComponent},
+      {path: 'games/cat/:category', component: PageGamesComponent},
+      {path: 'games/search-game/:searchGame/cat/:category', component: PageGamesComponent},
+      {path: 'game/:gameId', component: PageGameComponent, data: {
           breadcrumb: [//TODO
             { label: 'Games', url: '/games' },
             { label: 'Game', url: '' }]
-        }
-      },
+      }},
     ]
   },
   {

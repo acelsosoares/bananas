@@ -1,5 +1,26 @@
 .bnn-footer {
+    display: table;
+    width: 100%;
     margin-top: 100px;
-    padding-bottom: 30px;
-    background-color: #999;
+    padding: 30px 0;
+    background-color: #333;
+}
+.bnn-footer-copyrights {
+    float: left;
+    color: #fff;
+}
+.bnn-footer-menu {
+    @include resetList();
+    margin-left: 40px;
+    float: left;
+    display: table;
+    > li {
+        float: left;
+        > a {
+
+        }
+        & + li {
+            margin-left: 20px;
+        }
+    }
 }

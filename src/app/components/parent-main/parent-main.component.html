@@ -1,7 +1,7 @@
 <!-- Main Header -->
 <header class="bnn-header">
-  <div class="container">
-    <nav class="bnn-header-nav" [ngClass]="menuStatusClass">
+  <nav class="bnn-header-nav" [ngClass]="menuStatusClass">
+    <div class="container">
 
       <!-- ForestSIM Logo -->
       <a class="bnn-logo" routerLink="/" title="Go to home">
@@ -17,8 +17,8 @@
       
       <!-- Main Menu - Links -->
       <app-menu-main></app-menu-main>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
 
 <!-- Main Content -->
@@ -29,7 +29,7 @@
 <!-- Main Footer -->
 <footer class="bnn-footer">
   <div class="container">
-    © 2019 Crazy Bananas · 
+    <span class="bnn-footer-copyrights">© 2019 Crazy Bananas</span>
     <nav class="bnn-footer-nav">
       <ul class="bnn-footer-menu">
         <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Privacy</a></li>

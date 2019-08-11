@@ -6,23 +6,24 @@ $btnHeight: 26px;
     font-weight: normal;
     min-height: $btnHeight;
     line-height: 40px;
-    font-size: 16px;
+    @include fontSize(16px);
     text-decoration: none;
-    // Big buttons
-    &--update {
+
+    &--navigate {
         position: relative;
         min-width: 0;
-        padding-right: 34px;
-        background-color: $themeColor;
+        padding-right: 40px;
+        background-color: $themeBlueColor;
         color: #fff;
-        line-height: $btnHeight;
+        min-height: 50px;
+        line-height: 50px;
         &:after {
             position: absolute;
             top: 0px;
             right: 10px;
             font-family: "Material Icons";
-            content: "autorenew";
-            font-size: 20px;
+            content: "games";
+            font-size: 24px;
         }
     }
 }

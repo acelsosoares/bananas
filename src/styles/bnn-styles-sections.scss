@@ -1,3 +1,11 @@
+.bnn-generic-section {
+    
+}
+.bnn-generic-section-header-title {
+    margin-bottom: 25px;
+    color: #333;
+}
+
 .bnn-popgames-list {
 
 }
@@ -23,6 +31,9 @@
 }
 .bnn-game-info-name {
     color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
 .bnn-game-details-description {
     color: #333;
@@ -38,7 +49,22 @@
     padding: 5px;
     background-color: #dedede;
     cursor: pointer;
+    &.active {
+        background-color: $themeBlueColor;
+        color: #fff;
+    }
     & + .bnn-categories-filter-item {
         margin-top: 5px;
     }
+}
+.bnn-categories-list {
+
+}
+.bnn-categories-list-item {
+    float: left;
+    display: block;
+    padding: 5px 6px;
+    background-color: #dedede;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }

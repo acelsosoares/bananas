@@ -20,6 +20,8 @@ import { SectionGamesPopularComponent } from './components/section-games-popular
 import { LoaderComponent } from './components/loader/loader.component';
 import { PageGameComponent } from './components/page-game/page-game.component';
 import { PageGamesComponent } from './components/page-games/page-games.component';
+import { SectionGamesSearchComponent } from './components/section-games-search/section-games-search.component';
+import { SectionCategoriesComponent } from './components/section-categories/section-categories.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PageGamesComponent } from './components/page-games/page-games.component
     SectionGamesPopularComponent,
     LoaderComponent,
     PageGameComponent,
-    PageGamesComponent
+    PageGamesComponent,
+    SectionGamesSearchComponent,
+    SectionCategoriesComponent
   ],
   imports: [
     BrowserModule,

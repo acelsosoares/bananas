@@ -1,9 +1,9 @@
 <div class="bnn-main-section">
 
   <!-- Main Section - Header -->
-  <header class="bnn-main-section-header">
+  <header class="bnn-main-section-header" [@headerTransition]="headerTransitionState">
     <div class="container">
-      <h1 class="bnn-main-section-header-title">Welcome to Crazy Bananas</h1>
+      <h1 class="bnn-main-section-header-title">{{welcomeTitle}}</h1>
     </div>
   </header>
 
@@ -11,9 +11,24 @@
   <div class="bnn-main-section-content">
     <div class="container">
 
-      <!-- Popular Games Section -->
-      <app-section-games-popular></app-section-games-popular>
+      <div class="row">
+        <div class="col-md-7 col-lg-8">
+
+          <!-- Popular Games Section -->
+          <app-section-games-popular></app-section-games-popular>
+        </div>
+        <div class="col-md-5 col-lg-4">
+
+          <!-- Chekout Games Btn -->
+          <button class="bnn-btn bnn-btn--navigate" type="button" mat-button aria-label="See all games" title="See all games" (click)="goToGamesPage()">Checkout all games we have</button>
+
+          <!-- Search Games Section -->
+          <app-section-games-search></app-section-games-search>
+
+          <!-- Categories Section -->
+          <app-section-categories></app-section-categories>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

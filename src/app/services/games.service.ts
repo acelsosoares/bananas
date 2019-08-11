@@ -33,7 +33,7 @@ export class GamesService {
       //Get data from DB
       let apiContent = 'games';
       this.http.get<IGamesResponse>(environment.apiUrl+apiContent, {params: this.getParams()}).subscribe(data => {
-        this.games = data._embedded.games;
+        this.games = data._embedded.games.filter(game => game.enabled);
         this.dataGames$.next(this.games);
       }, error => {
         //Go to error generic page
@@ -63,13 +63,17 @@ export class GamesService {
     }
   }
 
-  getCategories() {
+  getCategories(categoryName: string = null) {
     if(!this.categories) {
       
       //Get data from DB
       let apiContent = 'game-categories';
       this.http.get<ICategoriesResponse>(environment.apiUrl+apiContent, {params: this.getParams()}).subscribe(data => {
         this.categories = data._embedded.game_categories;
+        
+        if(categoryName)//Send specific category games
+        this.dataGamesByCategory$.next(this.getCachedCategoryGames(categoryName));
+        else//Send all categories
         this.dataCategories$.next(this.categories);
       }, error => {
         //Go to error generic page
@@ -77,6 +81,9 @@ export class GamesService {
     } else {
       
       //Use cached data
+      if(categoryName)//Send specific category games
+      this.dataGamesByCategory$.next(this.getCachedCategoryGames(categoryName));
+      else//Send all categories
       this.dataCategories$.next(this.categories);
     }
   }
@@ -87,7 +94,7 @@ export class GamesService {
       //Get data from DB
       let apiContent = 'game-categories/popular-games';
       this.http.get<ICategory>(environment.apiUrl+apiContent, {params: this.getParams()}).subscribe(data => {
-        this.gamesPopular = data._embedded.games;
+        this.gamesPopular = data._embedded.games.filter(game => game.enabled);
         this.dataGamesPopular$.next(this.gamesPopular);
       }, error => {
         //Go to error generic page
@@ -99,16 +106,11 @@ export class GamesService {
     }
   }
 
-  //Not cached just because... :D
-  //I could call getCategories() here and make the filter there but for now i will do like that and i will change in the end if i have time
   getGamesByCategory(categoryName: string) {
-    
-    //Get data from DB
-    let apiContent = 'game-categories/'+categoryName;
-    this.http.get<ICategory>(environment.apiUrl+apiContent, {params: this.getParams()}).subscribe(data => {
-      this.dataGamesByCategory$.next(data._embedded.games);
-    }, error => {
-      //Go to error generic page
-    });
+    this.getCategories(categoryName);
+  }
+
+  getCachedCategoryGames(categoryName: string): IGame[] {
+    return this.categories.filter(category => category.slug == categoryName)[0]._embedded.games;
   }
 }

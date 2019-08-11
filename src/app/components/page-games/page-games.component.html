@@ -1,43 +1,40 @@
-<!-- Loader -->
-<app-loader [active]="isLoadingData"></app-loader>
-
 <!-- Main Section -->
-<div *ngIf="!isLoadingData" class="bnn-main-section bnn-main-section--game">
+<div class="bnn-main-section bnn-main-section--game">
 
   <!-- Main Section - Header -->
-  <header class="bnn-main-section-header">
+  <header class="bnn-main-section-header" [@headerTransition]="headerTransitionState">
     <div class="container">
       <h1 class="bnn-main-section-header-title">Games</h1>
     </div>
   </header>
 
+  <!-- Loader -->
+  <app-loader [active]="isLoadingData"></app-loader>
+
   <!-- Main Section - Content -->
-  <div class="bnn-main-section-content">
+  <div *ngIf="!isLoadingData" class="bnn-main-section-content">
     <div class="container">
 
       <!-- Game Name Filter -->
       <div class="bnn-search">
-        <form [formGroup]="searchForm" (ngSubmit)="filterByText(searchForm)">
+        <form [formGroup]="searchForm">
           <div class="bnn-search-field">
-            <input matInput type="text" placeholder="Search game" formControlName="searchText">
+            <input matInput type="text" placeholder="Filter by game" formControlName="searchText" (keyup)="filterByText(searchForm)">
             <button class="bnn-search-clean-btn" *ngIf="searchForm.value.searchText" mat-button type="button"
               matSuffix mat-icon-button aria-label="Clean search textbox"
-              (click)="searchForm.controls['searchText'].setValue('');">
+              (click)="searchForm.controls['searchText'].setValue(''); filterByText(searchForm)">
               <mat-icon>close</mat-icon>
             </button>
           </div>
-          <button type="submit" class="bnn-table-search-btn" mat-icon-button>
-            <mat-icon aria-label="Search in the list">search</mat-icon>
-          </button>
         </form>
       </div>
       <div class="row mt-4">
         <div class="col-md-3">
 
           <!-- Categories Filter -->
-          <ul class="bnn-categories-filter bnn-list">
-            <li class="bnn-categories-filter-item" (click)="selectCategory(null)">All</li>
-            <li class="bnn-categories-filter-item" *ngFor="let category of categoriesData; let i=index" (click)="selectCategory(category.slug)">{{category.name}}</li>
+          <ul class="bnn-categories-filter bnn-list mb-4">
+            <li class="bnn-categories-filter-item active" id="cat-menu-item-all" (click)="selectCategory('all')">All</li>
+            <li class="bnn-categories-filter-item" *ngFor="let category of categoriesData; let i=index" [id]="'cat-menu-item-'+category.slug" (click)="selectCategory(category.slug)">{{category.name}}</li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -47,7 +44,7 @@
 
           <!-- List of Games -->
           <ul *ngIf="!isLoadingGamesData" class="bnn-popgames-list bnn-list row">
-            <li class="bnn-popgames-list-item col-sm-6 col-md-4 col-lg-3" *ngFor="let game of gamesData; let i=index">
+            <li class="bnn-popgames-list-item col-sm-6 col-md-4 col-lg-3" *ngFor="let game of gamesData | slice:0:maxItemsVisible; let i=index">
               <div class="bnn-game bnn-game--square">
                 <img class="bnn-img bnn-img--resp" [src]="game.thumbnail" [alt]="game.name">
                 <div class="bnn-game-info">
@@ -57,6 +54,7 @@
             </li>
           </ul>
           <p *ngIf="!isLoadingGamesData && gamesData.length<=0">No games have been found</p>
+          <a *ngIf="!isLoadingGamesData && gamesData && gamesData.length > maxItemsVisible" [routerLink]="" class="bnn-link mt-5" (click)="loadMore()">Load more games</a>
         </div>
       </div>
     </div>

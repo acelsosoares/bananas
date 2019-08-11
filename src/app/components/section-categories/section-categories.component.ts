@@ -1,17 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { IGame } from 'src/interfaces';
 import { GamesService } from 'src/app/services/games.service';
+import { ICategory } from 'src/interfaces';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-section-games-popular',
-  templateUrl: './section-games-popular.component.html',
-  styleUrls: ['./section-games-popular.component.scss']
+  selector: 'app-section-categories',
+  templateUrl: './section-categories.component.html',
+  styleUrls: ['./section-categories.component.scss']
 })
-export class SectionGamesPopularComponent implements OnInit, OnDestroy {
+export class SectionCategoriesComponent implements OnInit, OnDestroy {
   readonly subs: Subscription[] = [];
   public isLoadingData: boolean = true;
-  public gamesData: IGame[] = [];
+  public categoriesData: ICategory[] = [];
 
   constructor(private gamesService: GamesService) { }
 
@@ -26,15 +26,15 @@ export class SectionGamesPopularComponent implements OnInit, OnDestroy {
   //-----------------------------------------------
   initRequests() {
     
-    //Get Games - Answer
-    this.subs.push(this.gamesService.dataGamesPopular$.subscribe(response => {
+    //Get Categories - Answer
+    this.subs.push(this.gamesService.dataCategories$.subscribe(response => {
       this.isLoadingData = false;
-      this.gamesData = response;
+      this.categoriesData = response;
     }));
   }
 
   getData() {
-    this.gamesService.getGamesPopular();
+    this.gamesService.getCategories();
   }
 
 

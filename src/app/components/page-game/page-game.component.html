@@ -1,18 +1,18 @@
-<!-- Loader -->
-<app-loader [active]="isLoadingData"></app-loader>
-
 <!-- Main Section -->
-<div *ngIf="!isLoadingData" class="bnn-main-section bnn-main-section--game">
+<div class="bnn-main-section bnn-main-section--game">
 
   <!-- Main Section - Header -->
-  <header class="bnn-main-section-header">
+  <header class="bnn-main-section-header" [@headerTransition]="headerTransitionState">
     <div class="container">
-      <h1 class="bnn-main-section-header-title">{{gameData.name}}</h1>
+      <h1 *ngIf="!isLoadingData" class="bnn-main-section-header-title">{{gameData.name}}</h1>
     </div>
   </header>
 
+  <!-- Loader -->
+  <app-loader [active]="isLoadingData"></app-loader>
+
   <!-- Main Section - Content -->
-  <div class="bnn-main-section-content bnn-game-details">
+  <div *ngIf="!isLoadingData" class="bnn-main-section-content bnn-game-details">
     <div class="container">
       <p class="bnn-game-details-description">{{gameData.description}}</p>
       <p class="bnn-game-details-vendor"><span class="bnn-game-details-lbl">Vendor:</span> {{gameData.vendor}}</p>

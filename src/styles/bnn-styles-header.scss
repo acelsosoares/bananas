@@ -4,8 +4,6 @@
 .bnn-header-nav {
     display: table;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
     padding-bottom: 18px;
     padding-top: 21px;
     min-height: 80px;
@@ -16,6 +14,7 @@
     right: 0;
     left: 0;
     z-index: 1000;
+
     //Mobile Menu Toggle
     @media (max-width: 767px) {
         &.visible {
@@ -34,7 +33,7 @@
     float: right;
     width: 50px;
     height: 40px;
-    background-color: #a0bf38;
+    background-color: $themeColor;
     border: 1px solid transparent;
     border-radius: 5px;
     cursor: pointer;
@@ -65,9 +64,9 @@
 }
 .bnn-logo-img {
     float: left;
-    width: 162px;
+    width: 180px;
 }
-.fsim-main-menu {
+.bnn-main-menu {
     
     //Mobile Menu
     @media (max-width: 767px) {
@@ -80,28 +79,30 @@
     @include resetList();
     display: table;
     float: right;
-    margin-top: 5px;
+    margin-top: 30px;
     > li {
         float: left;
         a,
-        .fsim-link {
+        .bnn-link {
+            @include fontSize(20px);
             padding: .5rem .5rem;
             &.active {
                 color: #000;
             }
         }
     }
+    
     //Mobile Menu
     @media (max-width: 767px) {
         width: 100%;
         margin-top: 10px;
-        .fsim-drop-menu-trigger {
+        .bnn-drop-menu-trigger {
             display: none !important;
         }
         li {
             width: 100%;
             a,
-            .fsim-link {
+            .bnn-link {
                 display: block;
                 width: 100%;
                 padding-left: 0;

@@ -16,8 +16,6 @@ export class PageGameComponent implements OnInit, OnDestroy {
   public gameId: string;
   public gameData: IGame;
 
-  @ViewChild('backgroundEl', { read: ElementRef }) backgroundEl: ElementRef;
-
   constructor(private gamesService: GamesService, 
               private route: ActivatedRoute,
               private sanitizer: DomSanitizer) { }
@@ -41,7 +39,6 @@ export class PageGameComponent implements OnInit, OnDestroy {
     this.subs.push(this.gamesService.dataGame$.subscribe(response => {
       this.isLoadingData = false;
       this.gameData = response;
-      this.backgroundEl.nativeElement.setAttribute('background', 'transparent url('+this.gameData.background+') no-repeat');
     }));
   }
 

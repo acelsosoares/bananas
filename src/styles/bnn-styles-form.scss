@@ -1,0 +1,46 @@
+.bnn-form {
+    
+}
+
+// Filter Game form
+// --------------------------
+.bnn-search {
+    display: table;
+    padding-left: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    *:focus {
+        outline: none;
+    }
+}
+.bnn-search-field {
+    display: inline-block;
+    width: 185px;
+    input {
+        width: 160px;
+        border: none;
+        background-color: transparent;
+    }
+    @media (max-width: 767px) {
+        width: 200px;
+    }
+}
+.bnn-search-clean-btn {
+    &.mat-icon-button {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        color: #333;
+    }
+}
+.bnn-search-btn {
+    float: right;
+    background-color: #999;
+    &.mat-icon-button {
+        width: 50px;
+        height: 24px;
+        line-height: 24px;
+        color: #fff;
+        border-radius: 0 3px 3px 0;
+    }
+}

@@ -24,3 +24,21 @@
 .bnn-game-info-name {
     color: #fff;
 }
+.bnn-game-details-description {
+    color: #333;
+}
+.bnn-game-details-lbl {
+    font-weight: bold;
+}
+.bnn-game-details-iframe {
+    width: 100%;
+    height: 400px;
+}
+.bnn-categories-filter-item {
+    padding: 5px;
+    background-color: #dedede;
+    cursor: pointer;
+    & + .bnn-categories-filter-item {
+        margin-top: 5px;
+    }
+}

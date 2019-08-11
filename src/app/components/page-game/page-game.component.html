@@ -12,9 +12,11 @@
   </header>
 
   <!-- Main Section - Content -->
-  <div #backgroundEl class="bnn-main-section-content">
+  <div class="bnn-main-section-content bnn-game-details">
     <div class="container">
-      <iframe class="bnn-game-iframe" [src]="buildSafeUrl(gameData.url)"></iframe>
+      <p class="bnn-game-details-description">{{gameData.description}}</p>
+      <p class="bnn-game-details-vendor"><span class="bnn-game-details-lbl">Vendor:</span> {{gameData.vendor}}</p>
+      <iframe class="bnn-game-details-iframe" [src]="buildSafeUrl(gameData.url)"></iframe>
     </div>
   </div>
 

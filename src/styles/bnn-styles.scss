@@ -88,6 +88,15 @@ a,
     margin-right: auto;
   }
 }
+.bnn-img-wrapper {
+  &--game {
+      @include forceAspectRatio(150px, 140px);
+  }
+  .bnn-img {
+    position: absolute;
+    top: 0;
+  }
+}
 .bnn-list {
     @include resetList();
 }

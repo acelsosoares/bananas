@@ -44,9 +44,11 @@
 
           <!-- List of Games -->
           <ul *ngIf="!isLoadingGamesData" class="bnn-popgames-list bnn-list row">
-            <li class="bnn-popgames-list-item col-sm-6 col-md-4 col-lg-3" *ngFor="let game of gamesData | slice:0:maxItemsVisible; let i=index">
+            <li *ngFor="let game of gamesData | slice:0:maxItemsVisible; let i=index" class="bnn-popgames-list-item col-sm-6 col-md-4 col-lg-3">
               <div class="bnn-game bnn-game--square">
-                <img class="bnn-img bnn-img--resp" [src]="game.thumbnail" [alt]="game.name">
+                <div class="bnn-img-wrapper bnn-img-wrapper--game">
+                  <img class="bnn-img bnn-img--resp" [src]="game.thumbnail" [alt]="game.name">
+                </div>
                 <div class="bnn-game-info">
                   <a class="bnn-game-info-name" [routerLink]="'/game/'+game.id">{{game.name}}</a>
                 </div>
